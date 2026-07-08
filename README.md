@@ -223,7 +223,7 @@ Uploads and indexes a PDF document into the vector database.
 
 ---
 
-## Semantic Search (Planned)
+## Semantic Search 
 
 ```http
 POST /search
@@ -233,7 +233,7 @@ Performs semantic similarity search.
 
 ---
 
-## Chat / Question Answering (Planned)
+## Chat / Question Answering 
 
 ```http
 POST /chat
