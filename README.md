@@ -175,7 +175,7 @@ Qdrant Vector Database
 
 ---
 
-# Retrieval Pipeline (Planned)
+# Retrieval Pipeline 
 
 ```text
 User Query
