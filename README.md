@@ -37,7 +37,7 @@ A production-oriented Retrieval-Augmented Generation (RAG) backend built with Fa
 - Metadata payload storage
 - Cosine similarity search configuration
 
-## Semantic Retrieval (Planned)
+## Semantic Retrieval 
 
 - Query embedding generation
 - Top-K semantic search
@@ -45,7 +45,7 @@ A production-oriented Retrieval-Augmented Generation (RAG) backend built with Fa
 - Similarity score ranking
 - Context retrieval
 
-## RAG Pipeline (Planned)
+## RAG Pipeline 
 
 - Prompt construction
 - LLM integration
