@@ -333,12 +333,12 @@ http://127.0.0.1:8000/docs
 | Recursive Chunking                | Completed   |
 | Embedding Generation              | Completed   |
 | Qdrant Integration                | Completed   |
-| Batch Vector Indexing             | In Progress |
-| Semantic Search                   | Planned     |
-| Top-K Retrieval                   | Planned     |
-| Metadata Filtering                | Planned     |
-| RAG Inference Pipeline            | Planned     |
-| Conversational Question Answering | Planned     |
+| Batch Vector Indexing             | Completed   |
+| Semantic Search                   | Completed   |
+| Top-K Retrieval                   | Completed   |
+| Metadata Filtering                | Completed   |
+| RAG Inference Pipeline            | Completed   |
+| Conversational Question Answering | Completed   |
 
 ---
 
