@@ -4,11 +4,14 @@ from app.schemas.search import (
     SearchRequest,
     SearchResponse,
 )
+from app.services.retrieval_service import RetrievalService
 
 router = APIRouter(
     prefix="/search",
     tags=["Semantic Search"],
 )
+
+retrieval_service = RetrievalService()
 
 
 @router.post(
@@ -19,8 +22,7 @@ async def semantic_search(
     request: SearchRequest,
 ):
 
-    return SearchResponse(
+    return retrieval_service.semantic_search(
         query=request.query,
-        total_results=0,
-        results=[],
+        top_k=request.top_k,
     )
