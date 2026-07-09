@@ -52,13 +52,13 @@ class EmbeddingService:
 
             embeddings.append(
                 Embedding(
-    chunk_id=chunk.chunk_id,
-    document_id=chunk.document_id,
-    filename=chunk.filename,
-    page_number=chunk.page_number,
-    text=chunk.text,
-    vector=vector.tolist(),
-)
+                    chunk_id=chunk.chunk_id,
+                    document_id=chunk.document_id,
+                    filename=chunk.filename,
+                    page_number=chunk.page_number,
+                    text=chunk.text,
+                    vector=vector.tolist(),
+                )
             )
 
         logger.info(
@@ -66,3 +66,23 @@ class EmbeddingService:
         )
 
         return embeddings
+
+    def generate_query_embedding(
+        self,
+        query: str,
+    ) -> list[float]:
+        """
+        Generate embedding for a user query.
+        """
+
+        logger.info("Generating query embedding.")
+
+        embedding = self.model.encode(
+            query,
+            convert_to_numpy=True,
+            normalize_embeddings=True,
+        )
+
+        logger.info("Query embedding generated successfully.")
+
+        return embedding.tolist()
