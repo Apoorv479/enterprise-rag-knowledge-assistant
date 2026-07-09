@@ -263,6 +263,8 @@ EMBEDDING_DIMENSION=384
 QDRANT_URL=your_qdrant_url
 QDRANT_API_KEY=your_qdrant_api_key
 QDRANT_COLLECTION=documents
+GEMINI_API_KEY=Your_gemini_api_key
+LLM_MODEL=gemini_model
 ```
 
 ---
