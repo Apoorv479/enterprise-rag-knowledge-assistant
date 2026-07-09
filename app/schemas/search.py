@@ -9,14 +9,24 @@ class SearchRequest(BaseModel):
     query: str = Field(
         ...,
         min_length=3,
-        description="User question",
+        description="User search query",
     )
 
     top_k: int = Field(
         default=5,
         ge=1,
         le=20,
-        description="Number of chunks to retrieve",
+        description="Number of similar chunks to retrieve",
+    )
+
+    document_id: str | None = Field(
+        default=None,
+        description="Search only inside a specific document",
+    )
+
+    filename: str | None = Field(
+        default=None,
+        description="Search only inside a specific file",
     )
 
 
