@@ -20,14 +20,14 @@ class RetrievalService:
         self,
         query: str,
         top_k: int,
+        document_id: str | None = None,
+        filename: str | None = None,
     ) -> SearchResponse:
 
         logger.info(f"Searching for: {query}")
 
         # Step 1
-        query_embedding = self.embedding_service.generate_query_embedding(
-            query
-        )
+        query_embedding = self.embedding_service.generate_query_embedding(query)
 
         logger.info("Query embedding generated.")
 
@@ -35,6 +35,8 @@ class RetrievalService:
         results = self.vector_service.search(
             query_vector=query_embedding,
             top_k=top_k,
+            document_id=document_id,
+            filename=filename,
         )
 
         logger.info(f"Retrieved {len(results)} chunks.")
