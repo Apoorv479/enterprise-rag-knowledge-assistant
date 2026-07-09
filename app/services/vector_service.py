@@ -3,6 +3,9 @@ from uuid import uuid4
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
     Distance,
+    FieldCondition,
+    Filter,
+    MatchValue,
     PointStruct,
     VectorParams,
 )
@@ -97,6 +100,8 @@ class VectorService:
         self,
         query_vector: list[float],
         top_k: int = 5,
+        document_id: str | None = None,
+        filename: str | None = None,
     ) -> list[SearchResult]:
         """
         Perform semantic similarity search.
@@ -104,9 +109,38 @@ class VectorService:
 
         logger.info(f"Searching top {top_k} similar chunks.")
 
+        conditions = []
+
+        if document_id:
+
+            conditions.append(
+                FieldCondition(
+                    key="document_id",
+                    match=MatchValue(value=document_id),
+                )
+            )
+
+        if filename:
+
+            conditions.append(
+                FieldCondition(
+                    key="filename",
+                    match=MatchValue(value=filename),
+                )
+            )
+
+        search_filter = None
+
+        if conditions:
+
+            search_filter = Filter(
+                must=conditions,
+            )
+
         results = self.client.query_points(
             collection_name=settings.QDRANT_COLLECTION,
             query=query_vector,
+            query_filter=search_filter,
             limit=top_k,
         )
 
