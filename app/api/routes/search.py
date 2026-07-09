@@ -25,4 +25,6 @@ async def semantic_search(
     return retrieval_service.semantic_search(
         query=request.query,
         top_k=request.top_k,
+        document_id=request.document_id,
+        filename=request.filename,
     )
