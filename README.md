@@ -37,7 +37,7 @@ A production-oriented Retrieval-Augmented Generation (RAG) backend built with Fa
 - Metadata payload storage
 - Cosine similarity search configuration
 
-## Semantic Retrieval 
+## Semantic Retrieval
 
 - Query embedding generation
 - Top-K semantic search
@@ -45,7 +45,7 @@ A production-oriented Retrieval-Augmented Generation (RAG) backend built with Fa
 - Similarity score ranking
 - Context retrieval
 
-## RAG Pipeline 
+## RAG Pipeline
 
 - Prompt construction
 - LLM integration
@@ -175,7 +175,7 @@ Qdrant Vector Database
 
 ---
 
-# Retrieval Pipeline 
+# Retrieval Pipeline
 
 ```text
 User Query
@@ -223,7 +223,7 @@ Uploads and indexes a PDF document into the vector database.
 
 ---
 
-## Semantic Search 
+## Semantic Search
 
 ```http
 POST /search
@@ -233,7 +233,7 @@ Performs semantic similarity search.
 
 ---
 
-## Chat / Question Answering 
+## Chat / Question Answering
 
 ```http
 POST /chat
@@ -323,22 +323,22 @@ http://127.0.0.1:8000/docs
 
 # Current Development Status
 
-| Module                            | Status      |
-| --------------------------------- | ----------- |
-| FastAPI Backend                   | Completed   |
-| Configuration Management          | Completed   |
-| Logging                           | Completed   |
-| PDF Upload                        | Completed   |
-| PDF Text Extraction               | Completed   |
-| Recursive Chunking                | Completed   |
-| Embedding Generation              | Completed   |
-| Qdrant Integration                | Completed   |
-| Batch Vector Indexing             | Completed   |
-| Semantic Search                   | Completed   |
-| Top-K Retrieval                   | Completed   |
-| Metadata Filtering                | Completed   |
-| RAG Inference Pipeline            | Completed   |
-| Conversational Question Answering | Completed   |
+| Module                            | Status    |
+| --------------------------------- | --------- |
+| FastAPI Backend                   | Completed |
+| Configuration Management          | Completed |
+| Logging                           | Completed |
+| PDF Upload                        | Completed |
+| PDF Text Extraction               | Completed |
+| Recursive Chunking                | Completed |
+| Embedding Generation              | Completed |
+| Qdrant Integration                | Completed |
+| Batch Vector Indexing             | Completed |
+| Semantic Search                   | Completed |
+| Top-K Retrieval                   | Completed |
+| Metadata Filtering                | Completed |
+| RAG Inference Pipeline            | Completed |
+| Conversational Question Answering | Completed |
 
 ---
 

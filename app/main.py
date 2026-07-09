@@ -1,3 +1,4 @@
+from app.services.vector_service import VectorService
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -10,12 +11,17 @@ from app.core.logger import logger
 @asynccontextmanager
 async def lifespan(app: FastAPI):
 
+    logger.info("Application starting...")
+
+    vector_service = VectorService()
+
+    vector_service.create_collection()
+
     logger.info("Application started successfully.")
 
     yield
 
     logger.info("Application stopped.")
-
 
 app = FastAPI(
     title=settings.APP_NAME,

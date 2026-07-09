@@ -1,11 +1,10 @@
+from uuid import uuid4
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
     Distance,
     PointStruct,
     VectorParams,
 )
-
-
 
 from app.core.config import settings
 from app.core.logger import logger
@@ -78,16 +77,16 @@ class VectorService:
 
             points.append(
                 PointStruct(
-                    id=f"{embedding.document_id}_{embedding.chunk_id}",
-                    vector=embedding.vector,
-                    payload={
-                        "document_id": embedding.document_id,
-                        "chunk_id": embedding.chunk_id,
-                        "filename": embedding.filename,
-                        "page_number": embedding.page_number,
-                        "text": embedding.text,
-                    },
-                )
+    id=str(uuid4()),
+    vector=embedding.vector,
+    payload={
+        "document_id": embedding.document_id,
+        "chunk_id": embedding.chunk_id,
+        "filename": embedding.filename,
+        "page_number": embedding.page_number,
+        "text": embedding.text,
+    },
+)
             )
 
         self.client.upsert(
